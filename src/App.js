@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Day01 from "./Challenge/Day01";
+import Day02 from "./Challenge/Day02";
+import Day03 from "./Challenge/Day03";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>React 30 Days Challenge-Codedamn</h1>
+        <Day01 />
+        <Day02 />
+        <Day03 />
       </header>
+      <body></body>
     </div>
   );
 }

@@ -42,6 +42,7 @@ export default function Day13() {
           className="p-4 bg-gray-200 rounded-full outline-none border-3"
           onChange={(e) => setTipPercentage(e.target.value)}
         />
+        {error && <p className="text-red-500">{error}</p>}
         <button
           id="calculate"
           className="flex p-4 my-4 font-bold text-white bg-green-500 rounded-full"

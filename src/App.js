@@ -4,8 +4,8 @@ import Day01 from "./Challenge/Day01";
 import Day02 from "./Challenge/Day02";
 import Day03 from "./Challenge/Day03";
 import Day13 from "./Challenge/Day13";
+
 function App() {
-  const days = [Day01, Day02, Day03];
   const [count, setCount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
   const [error, setError] = useState(null);
@@ -26,12 +26,8 @@ function App() {
   };
 
   const handleClick = () => {
-    if (count >= 1 && count <= days.length) {
-      setIsClicked(true);
-      setError(null);
-    } else {
-      setError("Please enter a valid day number.");
-    }
+    setIsClicked(true);
+    setError(null);
   };
 
   return (

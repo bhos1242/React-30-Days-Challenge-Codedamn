@@ -15,14 +15,9 @@ Welcome to the React 30 Day Challenge! This repository contains my solutions and
 ## Introduction
 
 This challenge is part of the React 30 Days Challenge organized by Codedamn. The goal is to improve my React skills by completing daily coding challenges that cover various topics within the React framework.
+## Live Preview
 
-## Challenges Overview
-
-- **Day 01:** [Description](/Challenge/Day01) | [Solution](/Challenge/Day01Solution)
-- **Day 02:** [Description](/Challenge/Day02) | [Solution](/Challenge/Day02Solution)
-- **Day 03:** [Description](/Challenge/Day03) | [Solution](/Challenge/Day03Solution)
-- ...
-- **Day 30:** [Description](/Challenge/Day30) | [Solution](/Challenge/Day30Solution)
+Explore the live preview of the challenges: [React 30 Days Challenge Live Preview](https://react-30-days-challenge-codedamn.vercel.app/)
 
 ## Getting Started
 

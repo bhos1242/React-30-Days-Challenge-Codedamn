@@ -26,7 +26,7 @@ export default function Day04() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10 text-white bg-green-500">
+    <div className="flex flex-col items-center justify-center min-h-screen py-10 text-black ">
       <h1 className="mb-8 text-3xl font-bold">Simple Interest Calculator</h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         <div className="mb-4">

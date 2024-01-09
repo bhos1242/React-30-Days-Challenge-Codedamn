@@ -1,3 +1,17 @@
+// Day13Solution.js
+import React from "react";
+
+const Day13Solution = () => {
+  return (
+    <div className="w-full max-w-full p-8 bg-white rounded-lg shadow-md">
+      <p className="mb-4 text-lg font-bold text-green-700">Day 13 Solution</p>
+      <p className="text-gray-700">
+        This is the solution for Day 13. Feel free to study the code and learn
+        from it!
+      </p>
+      <div className="mt-4 overflow-hidden border border-gray-300 rounded-md">
+        <pre className="p-4 overflow-x-auto bg-gray-100 rounded-md">
+          {`
 import { useState } from "react";
 
 export default function Day13() {
@@ -59,3 +73,11 @@ export default function Day13() {
     </div>
   );
 }
+`}
+        </pre>
+      </div>
+    </div>
+  );
+};
+
+export default Day13Solution;

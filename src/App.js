@@ -4,10 +4,12 @@ import Day01 from "./Challenge/Day01";
 import Day02 from "./Challenge/Day02";
 import Day03 from "./Challenge/Day03";
 import Day13 from "./Challenge/Day13";
-
+import Day13Solution from "./Codes/Day13Solution";
+import Day04 from "./Challenge/Day04";
 function App() {
   const [count, setCount] = useState(0);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isOutputClicked, setIsOutputClicked] = useState(false);
+  const [isSolutionClicked, setIsSolutionClicked] = useState(false);
   const [error, setError] = useState(null);
 
   const renderSelectedDay = () => {
@@ -18,15 +20,24 @@ function App() {
         return <Day02 />;
       case 3:
         return <Day03 />;
+      case 4:
+        return <Day04 />;
       case 13:
-        return <Day13 />;
+        return isSolutionClicked ? <Day13Solution /> : <Day13 />;
       default:
         return null;
     }
   };
 
-  const handleClick = () => {
-    setIsClicked(true);
+  const handleOutputClick = () => {
+    setIsOutputClicked(true);
+    setIsSolutionClicked(false); // Reset solution button state
+    setError(null);
+  };
+
+  const handleSolutionClick = () => {
+    setIsSolutionClicked(true);
+    setIsOutputClicked(false); // Reset output button state
     setError(null);
   };
 
@@ -47,14 +58,25 @@ function App() {
 
         <button
           className={`mt-4 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 ${
-            isClicked ? "bg-green-500" : ""
+            isOutputClicked ? "bg-green-500" : ""
           }`}
-          onClick={handleClick}
+          onClick={handleOutputClick}
         >
-          {isClicked ? "Day Shown!" : `Show Day ${count}`}
+          {isOutputClicked ? "Day Output Shown!" : `Show Day ${count} Output`}
         </button>
-        {error && <p className="mt-2 text-red-500">{error}</p>}
-        {isClicked && renderSelectedDay()}
+
+        <button
+          className={`mt-4 px-6 py-3 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
+            isSolutionClicked ? "bg-green-500" : ""
+          }`}
+          onClick={handleSolutionClick}
+        >
+          {isSolutionClicked ? "Solution Shown!" : `Show Day ${count} Solution`}
+        </button>
+        <div className="w-full">
+          {error && <p className="mt-2 text-red-500">{error}</p>}
+          {renderSelectedDay()}
+        </div>
       </header>
     </div>
   );

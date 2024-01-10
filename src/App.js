@@ -8,6 +8,7 @@ import Day13Solution from "./Codes/Day13Solution";
 import Day04 from "./Challenge/Day04";
 import Day05 from "./Challenge/Day05";
 import Day06 from "./Challenge/Day06";
+import Day14 from "./Challenge/Day14";
 function App() {
   const [count, setCount] = useState(0);
   const [isOutputClicked, setIsOutputClicked] = useState(false);
@@ -28,6 +29,8 @@ function App() {
         return <Day05 />;
       case 6:
         return <Day06 />;
+      case 14:
+        return <Day14 />;
       case 13:
         return isSolutionClicked ? <Day13Solution /> : <Day13 />;
       default:

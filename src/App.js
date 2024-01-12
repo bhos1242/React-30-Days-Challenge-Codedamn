@@ -9,6 +9,8 @@ import Day04 from "./Challenge/Day04";
 import Day05 from "./Challenge/Day05";
 import Day06 from "./Challenge/Day06";
 import Day14 from "./Challenge/Day14";
+import Day15 from "./Challenge/Day15";
+import Day16 from "./Challenge/Day16";
 function App() {
   const [count, setCount] = useState(0);
   const [isOutputClicked, setIsOutputClicked] = useState(false);
@@ -31,6 +33,10 @@ function App() {
         return <Day06 />;
       case 14:
         return <Day14 />;
+      case 15:
+        return <Day15 />;
+      case 16:
+        return <Day16 />;
       case 13:
         return isSolutionClicked ? <Day13Solution /> : <Day13 />;
       default:
@@ -82,11 +88,11 @@ function App() {
         >
           {isSolutionClicked ? "Solution Shown!" : `Show Day ${count} Solution`}
         </button>
-        <div className="w-full">
-          {error && <p className="mt-2 text-red-500">{error}</p>}
-          {renderSelectedDay()}
-        </div>
-      </header>
+      </header>{" "}
+      <div className="w-full mt-5 text-center border-2 rounded-md">
+        {error && <p className="mt-2 text-red-500">{error}</p>}
+        {renderSelectedDay()}
+      </div>
     </div>
   );
 }

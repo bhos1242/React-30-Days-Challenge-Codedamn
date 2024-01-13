@@ -38,7 +38,7 @@ function App() {
         return <Day15 />;
       case 16:
         return <Day16 />;
-      case 16:
+      case 17:
         return <Day17 />;
       case 13:
         return isSolutionClicked ? <Day13Solution /> : <Day13 />;

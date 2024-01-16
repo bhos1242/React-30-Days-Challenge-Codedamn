@@ -20,7 +20,7 @@ export default function Day17() {
         {accordionData.map((data, index) => (
           <div
             key={index}
-            className={`accordion bg-gray-200 p-3 rounded-md transition-transform hover:cursor-pointer ${
+            className={`accordion bg-gray-200 p-3 rounded-md transition-transform hover:cursor<i class="fa fa-hand-pointer-o" aria-hidden="true"></i> ${
               activeIndex === index ? "transform bg-gray-300" : ""
             }`}
             onClick={() => handleToggle(index)}

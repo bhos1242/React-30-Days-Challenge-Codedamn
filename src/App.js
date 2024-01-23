@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 import Day01 from "./Challenge/Day01";
 import Day02 from "./Challenge/Day02";
 import Day03 from "./Challenge/Day03";
 import Day13 from "./Challenge/Day13";
-import Day13Solution from "./Codes/Day13Solution";
+
 import Day04 from "./Challenge/Day04";
 import Day05 from "./Challenge/Day05";
 import Day06 from "./Challenge/Day06";
@@ -42,6 +43,8 @@ function App() {
         return <Day06 />;
       case 14:
         return <Day14 />;
+      case 13:
+        return <Day13 />;
       case 15:
         return <Day15 />;
       case 16:
@@ -64,8 +67,7 @@ function App() {
         return <Day26 />;
       case 27:
         return <Day27 />;
-      case 13:
-        return isSolutionClicked ? <Day13Solution /> : <Day13 />;
+
       default:
         return null;
     }
@@ -74,12 +76,6 @@ function App() {
   const handleOutputClick = () => {
     setIsOutputClicked(true);
     setIsSolutionClicked(false); // Reset solution button state
-    setError(null);
-  };
-
-  const handleSolutionClick = () => {
-    setIsSolutionClicked(true);
-    setIsOutputClicked(false); // Reset output button state
     setError(null);
   };
 
@@ -106,15 +102,17 @@ function App() {
         >
           {isOutputClicked ? "Day Output Shown!" : `Show Day ${count} Output`}
         </button>
-
-        <button
-          className={`mt-4 px-6 py-3 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
-            isSolutionClicked ? "bg-green-500" : ""
-          }`}
-          onClick={handleSolutionClick}
-        >
-          {isSolutionClicked ? "Solution Shown!" : `Show Day ${count} Solution`}
-        </button>
+        <a href="https://github.com/bhos1242/React-30-Days-Challenge-Codedamn/tree/main/src/Challenge">
+          <button
+            className={`mt-4 px-6 py-3 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
+              isSolutionClicked ? "bg-green-500" : ""
+            }`}
+          >
+            {isSolutionClicked
+              ? "Solution Shown!"
+              : `Show Day ${count} Solution`}
+          </button>
+        </a>
       </header>{" "}
       <div className="w-full mt-5 text-center border-2 rounded-md">
         {error && <p className="mt-2 text-red-500">{error}</p>}

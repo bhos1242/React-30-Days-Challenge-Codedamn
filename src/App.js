@@ -83,45 +83,60 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <header className="text-center">
-        <h1 className="mb-4 text-4xl font-bold text-blue-700">
-          React 30 Days Challenge - Codedamn
-        </h1>
-        <input
-          type="number"
-          placeholder="Enter Day number to see the output"
-          onChange={(e) => setCount(parseInt(e.target.value))}
-          className={`border p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 ${
-            error ? "border-red-500" : ""
-          }`}
-        />
-
-        <button
-          className={`mt-4 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 ${
-            isOutputClicked ? "bg-green-500" : ""
-          }`}
-          onClick={handleOutputClick}
-        >
-          {isOutputClicked ? "Day Output Shown!" : `Show Day ${count} Output`}
-        </button>
-        <a href="https://github.com/bhos1242/React-30-Days-Challenge-Codedamn/tree/main/src/Challenge">
-          <button
-            className={`mt-4 px-6 py-3 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
-              isSolutionClicked ? "bg-green-500" : ""
-            }`}
+    <>
+      <div className="flex flex-col items-center justify-center min-h-5 bg-gray-100">
+        <header className="text-center">
+          <h1 className="mb-4 text-4xl font-bold text-blue-700">
+            React 30 Days Challenge - Codedamn{" "}
+            <span className="text-sm text-red-500 animate-pulse">
+              By Vivek Bhos
+            </span>
+          </h1>
+          <div id="input-box">
+            <input
+              type="number"
+              placeholder="Enter Day number to see the output"
+              onChange={(e) => setCount(parseInt(e.target.value))}
+              className={`border p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 ${
+                error ? "border-red-500" : ""
+              }`}
+            />
+          </div>
+          <div
+            id="buttons"
+            className="flex space-x-4 text-center justify-center"
           >
-            {isSolutionClicked
-              ? "Solution Shown!"
-              : `Show Day ${count} Solution`}
-          </button>
-        </a>
-      </header>{" "}
+            <button
+              className={`mt-4 px-4 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 ${
+                isOutputClicked ? "bg-green-500" : ""
+              }`}
+              onClick={handleOutputClick}
+            >
+              {isOutputClicked
+                ? "Day Output Shown!"
+                : `Show Day ${count} Output`}
+            </button>
+            <a
+              href={`https://github.com/bhos1242/React-30-Days-Challenge-Codedamn/tree/main/src/Challenge/`}
+            >
+              <button
+                className={`mt-4 px-4 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
+                  isSolutionClicked ? "bg-green-500" : ""
+                }`}
+              >
+                {isSolutionClicked
+                  ? "Solution Shown!"
+                  : `Show Day ${count} Solution`}
+              </button>
+            </a>
+          </div>
+        </header>{" "}
+      </div>{" "}
       <div className="w-full mt-5 text-center border-2 rounded-md">
         {error && <p className="mt-2 text-red-500">{error}</p>}
         {renderSelectedDay()}
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import { FaLinkedin } from "react-icons/fa"; // Import the LinkedIn icon from a suitable library
 
 import Day01 from "./Challenge/Day01";
 import Day02 from "./Challenge/Day02";
@@ -22,6 +23,7 @@ import Day25 from "./Challenge/Day25";
 import Day26 from "./Challenge/Day26";
 import Day27 from "./Challenge/Day27";
 import Day28 from "./Challenge/Day28";
+import Day29 from "./Challenge/Day29";
 function App() {
   const [count, setCount] = useState(0);
   const [isOutputClicked, setIsOutputClicked] = useState(false);
@@ -70,6 +72,8 @@ function App() {
         return <Day27 />;
       case 28:
         return <Day28 />;
+      case 29:
+        return <Day29 />;
 
       default:
         return null;
@@ -78,13 +82,13 @@ function App() {
 
   const handleOutputClick = () => {
     setIsOutputClicked(true);
-    setIsSolutionClicked(false); // Reset solution button state
+    setIsSolutionClicked(false);
     setError(null);
   };
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-5 bg-gray-100">
+      <div className="flex flex-col items-center justify-center bg-gray-100 min-h-12">
         <header className="text-center">
           <h1 className="mb-4 text-4xl font-bold text-blue-700">
             React 30 Days Challenge - Codedamn{" "}
@@ -92,7 +96,7 @@ function App() {
               By Vivek Bhos
             </span>
           </h1>
-          <div id="input-box">
+          <div id="input-box" className="mb-4">
             <input
               type="number"
               placeholder="Enter Day number to see the output"
@@ -104,10 +108,10 @@ function App() {
           </div>
           <div
             id="buttons"
-            className="flex space-x-4 text-center justify-center"
+            className="flex justify-center space-x-4 text-center"
           >
             <button
-              className={`mt-4 px-4 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 ${
+              className={`px-4 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 ${
                 isOutputClicked ? "bg-green-500" : ""
               }`}
               onClick={handleOutputClick}
@@ -118,9 +122,11 @@ function App() {
             </button>
             <a
               href={`https://github.com/bhos1242/React-30-Days-Challenge-Codedamn/tree/main/src/Challenge/`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <button
-                className={`mt-4 px-4 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
+                className={`px-4 py-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-700 focus:outline-none focus:ring focus:border-blue-300 ${
                   isSolutionClicked ? "bg-green-500" : ""
                 }`}
               >
@@ -130,8 +136,18 @@ function App() {
               </button>
             </a>
           </div>
-        </header>{" "}
-      </div>{" "}
+          <div className="absolute top-0 right-0 mt-4 mr-4">
+            <a
+              href="https://www.linkedin.com/in/vivekbhos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-900"
+            >
+              <FaLinkedin className="text-2xl" />
+            </a>
+          </div>
+        </header>
+      </div>
       <div className="w-full mt-5 text-center border-2 rounded-md">
         {error && <p className="mt-2 text-red-500">{error}</p>}
         {renderSelectedDay()}

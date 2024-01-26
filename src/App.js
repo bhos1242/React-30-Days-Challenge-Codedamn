@@ -24,6 +24,7 @@ import Day26 from "./Challenge/Day26";
 import Day27 from "./Challenge/Day27";
 import Day28 from "./Challenge/Day28";
 import Day29 from "./Challenge/Day29";
+import Day30 from "./Challenge/Day30";
 function App() {
   const [count, setCount] = useState(0);
   const [isOutputClicked, setIsOutputClicked] = useState(false);
@@ -74,6 +75,8 @@ function App() {
         return <Day28 />;
       case 29:
         return <Day29 />;
+      case 30:
+        return <Day30 />;
 
       default:
         return null;
